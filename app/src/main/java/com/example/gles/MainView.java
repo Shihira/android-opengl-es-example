@@ -1,16 +1,16 @@
-package com.example.openglmusicvisualizer;
+package com.example.gles;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.util.AttributeSet;
 
-public class MusicView extends GLSurfaceView {
+public class MainView extends GLSurfaceView {
 
-    public MusicView(Context context){
+    public MainView(Context context){
         super(context);
         init();
     }
-    public MusicView(Context context, AttributeSet attrs){
+    public MainView(Context context, AttributeSet attrs){
         super(context, attrs);
         init();
     }
@@ -18,6 +18,6 @@ public class MusicView extends GLSurfaceView {
     private void init() {
         setEGLContextClientVersion(2);
         setPreserveEGLContextOnPause(true);
-        setRenderer(new MusicRenderer());
+        setRenderer(new SimpleRenderer());
     }
 }

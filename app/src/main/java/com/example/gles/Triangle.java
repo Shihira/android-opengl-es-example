@@ -1,4 +1,4 @@
-package com.example.openglmusicvisualizer;
+package com.example.gles;
 
 import android.opengl.GLES20;
 
@@ -57,9 +57,9 @@ public class Triangle {
         // set the buffer to read the first coordinate
         vertexBuffer.position(0);
 
-        int vertexShader = MusicRenderer.loadShader(GLES20.GL_VERTEX_SHADER,
+        int vertexShader = SimpleRenderer.loadShader(GLES20.GL_VERTEX_SHADER,
                 vertexShaderCode);
-        int fragmentShader = MusicRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,
+        int fragmentShader = SimpleRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,
                 fragmentShaderCode);
 
         // create empty OpenGL ES Program

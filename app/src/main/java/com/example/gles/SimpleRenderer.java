@@ -1,4 +1,4 @@
-package com.example.openglmusicvisualizer;
+package com.example.gles;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
@@ -6,10 +6,8 @@ import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class MusicRenderer implements GLSurfaceView.Renderer {
-
+public class SimpleRenderer implements GLSurfaceView.Renderer {
     private Triangle mTriangle;
-    private Square msquare;
 
     private final float[] vPMatrix = new float[16];
     private final float[] projectionMatrix = new float[16];
@@ -19,7 +17,6 @@ public class MusicRenderer implements GLSurfaceView.Renderer {
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES20.glClearColor(1f, 0, 0, 1);
         mTriangle = new Triangle();
-        msquare = new Square();
     }
 
     @Override

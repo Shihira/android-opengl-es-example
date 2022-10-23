@@ -1,13 +1,12 @@
-package com.example.openglmusicvisualizer;
+package com.example.gles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MusicView musicView;
+    private MainView mainView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,19 +15,19 @@ public class MainActivity extends AppCompatActivity {
         // Create a GLSurfaceView instance and set it
         // as the ContentView for this Activity.
         setContentView(R.layout.activity_main);
-        musicView =(MusicView) findViewById(R.id.musicView);
+        mainView = (MainView) findViewById(R.id.mainView);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        musicView.onResume();
+        mainView.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        musicView.onPause();
+        mainView.onPause();
     }
 
 

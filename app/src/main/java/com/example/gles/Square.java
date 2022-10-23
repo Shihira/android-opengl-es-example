@@ -1,4 +1,4 @@
-package com.example.openglmusicvisualizer;
+package com.example.gles;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
