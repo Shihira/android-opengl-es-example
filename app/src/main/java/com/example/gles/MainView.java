@@ -18,6 +18,7 @@ public class MainView extends GLSurfaceView {
     private void init() {
         setEGLContextClientVersion(2);
         setPreserveEGLContextOnPause(true);
-        setRenderer(new SimpleRenderer());
+        //setRenderer(new TriangleRenderer(this));
+        setRenderer(new SquareRenderer(this));
     }
 }
