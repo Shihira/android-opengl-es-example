@@ -13,4 +13,23 @@
             gl_FragColor = color;
         }
     ]]></string>
+
+    <string name="textured_vert"><![CDATA[
+        layout(location = POSITION_LOCATION) attribute vec3 position;
+        layout(location = UV_LOCATION) attribute vec2 vertUV;
+        layout(location = 0) varying vec2 outUV;
+        void main() {
+            gl_Position = vec4(position, 1);
+            outUV = vertUV;
+        }
+    ]]></string>
+    <string name="textured_frag"><![CDATA[
+        precision mediump float;
+        layout(location = 0) varying vec2 uv;
+        layout(binding = COLOR_BINDING) uniform vec4 color;
+        layout(binding = TEXTURE_BINDING) uniform sampler2D mainTexture;
+        void main() {
+            gl_FragColor = texture2D(mainTexture, uv);
+        }
+    ]]></string>
 </resources>
