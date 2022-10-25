@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">OpenGL ES Example</string>
     <string name="triangle_vert"><![CDATA[
-        layout(location = POSITION_LOCATION) attribute vec3 position;
+        layout(location = POSITION_LOCATION) in vec3 position;
         void main() {
             gl_Position = vec4(position, 1);
         }
     ]]></string>
     <string name="triangle_frag"><![CDATA[
         precision mediump float;
-        layout(binding = COLOR_BINDING) uniform vec4 color;
+        layout(location = COLOR_BINDING) uniform vec4 color;
+        out vec4 outColor;
         void main() {
-            gl_FragColor = color;
+            outColor = color;
         }
     ]]></string>
 </resources>

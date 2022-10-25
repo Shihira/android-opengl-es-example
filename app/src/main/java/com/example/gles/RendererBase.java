@@ -40,16 +40,18 @@ public class RendererBase implements GLSurfaceView.Renderer {
 
     public static int compileShaders(String vertexShaderCode, String fragmentShaderCode, String[] defines){
         StringBuilder sbDefines = new StringBuilder();
+        sbDefines.append("#version 300 es\n");
         for (int i = 0; i < defines.length / 2; ++i) {
             sbDefines.append(String.format("#define %s %s\n", defines[i * 2], defines[i * 2 + 1]));
         }
+        sbDefines.append("#line 1\n");
 
         int vertexShader = GLES30.glCreateShader(GLES30.GL_VERTEX_SHADER);
-        GLES30.glShaderSource(vertexShader, sbDefines.toString() + "\n" + vertexShaderCode);
+        GLES30.glShaderSource(vertexShader, sbDefines.toString() + vertexShaderCode);
         GLES30.glCompileShader(vertexShader);
 
         int fragmentShader = GLES30.glCreateShader(GLES30.GL_FRAGMENT_SHADER);
-        GLES30.glShaderSource(fragmentShader, sbDefines.toString() + "\n" + fragmentShaderCode);
+        GLES30.glShaderSource(fragmentShader, sbDefines.toString() + fragmentShaderCode);
         GLES30.glCompileShader(fragmentShader);
 
         // create empty OpenGL ES Program
