@@ -100,7 +100,7 @@ public class SquareRenderer extends RendererBase {
 
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0);
         GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, texture);
-        GLES30.glUniform1ui(TEXTURE_BINDING, 0);
+        GLES30.glUniform1i(TEXTURE_BINDING, 0);
 
         GLES30.glBindVertexArray(vertexStream);
         GLES30.glDrawElements(GLES30.GL_TRIANGLES, indices.length, GLES30.GL_UNSIGNED_INT, 0);

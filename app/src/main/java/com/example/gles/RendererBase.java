@@ -40,7 +40,7 @@ public class RendererBase implements GLSurfaceView.Renderer {
 
     public static int compileShaders(String vertexShaderCode, String fragmentShaderCode, String[] defines){
         StringBuilder sbDefines = new StringBuilder();
-        //sbDefines.append("#version 300 es\n");
+        sbDefines.append("#version 300 es\n");
         for (int i = 0; i < defines.length / 2; ++i) {
             sbDefines.append(String.format("#define %s %s\n", defines[i * 2], defines[i * 2 + 1]));
         }
